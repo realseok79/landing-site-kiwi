@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruby Kiwi - Red Jewel from Nature</title>
+    <meta name="description" content="Discover premium Ruby Kiwi with sweet berry aroma, ruby-red flesh, and full of nutrition.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <a href="index_en.html" class="logo">Ruby<span>Kiwi</span></a>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#story">Story</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-controls">
+            <div class="lang-switch">
+                <a href="index.html">KO</a>
+                <span>|</span>
+                <a href="index_en.html" class="active">EN</a>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Jewel of Nature,<br><span>Ruby Kiwi</span></h1>
+            <p>A special kiwi with a sweet berry scent and a ruby-red heart. <br>Experience higher sweetness and richer antioxidants than regular kiwis.</p>
+            <a href="#products" class="btn">Shop Now</a>
+        </div>
+        <div class="hero-image">
+            <img src="assets/hero.png" alt="Ruby Kiwi cross section">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="products">
+        <div class="section-title">
+            <h2>Why Ruby Kiwi?</h2>
+            <p>Discover the three special qualities of Ruby Kiwi.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-candy-cane"></i></div>
+                <h3>Overwhelming Sweetness</h3>
+                <p>With a higher Brix level than regular gold kiwis, it boasts a candy-like sweet taste.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-heartbeat"></i></div>
+                <h3>Red Energy, Anthocyanin</h3>
+                <p>The red core of the flesh is proof that it is rich in anthocyanin, a powerful antioxidant.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+                <h3>Natural Vitamin C Bomb</h3>
+                <p>Just one kiwi a day meets the recommended daily intake of Vitamin C for adults, making it a highly nutritious fruit.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story" id="story">
+        <div class="story-content">
+            <h2>Our Story</h2>
+            <p>We select only farms with optimal sunlight and soil to produce the most perfect Ruby Kiwis. From harvest to delivery, we bring the freshness of nature straight to your table.</p>
+            <p style="margin-top: 1rem;">Ruby Kiwi is not just a fruit. It is a small luxury and gift for those pursuing a healthy lifestyle.</p>
+        </div>
+        <div class="story-image">
+            <img src="assets/hero.png" alt="Ruby Kiwi farm image" style="filter: brightness(0.8);">
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-title">
+            <h2>Contact Us</h2>
+            <p>For bulk orders and partnership inquiries, please leave a message using the form below.</p>
+        </div>
+        <div class="contact-container">
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="example@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" placeholder="Enter your inquiry here"></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">Ruby<span>Kiwi</span></div>
+        <div class="footer-links">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">Blog</a>
+        </div>
+        <p class="copyright">&copy; 2026 Ruby Kiwi Co. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        
+        if (mobileMenu && navMenu) {
+            mobileMenu.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                const icon = mobileMenu.querySelector('i');
+                if (navMenu.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+
+            // Close mobile menu when a link is clicked
+            document.querySelectorAll('#nav-menu ul li a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    const icon = mobileMenu.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
