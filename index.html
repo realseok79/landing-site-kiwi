@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>루비 키위 - 자연이 선사하는 붉은 보석</title>
+    <meta name="description" content="달콤한 베리 향과 루비처럼 붉은 과육, 영양 가득한 프리미엄 루비 키위를 만나보세요.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <a href="#" class="logo">Ruby<span>Kiwi</span></a>
+        <nav>
+            <ul>
+                <li><a href="#home">홈페이지</a></li>
+                <li><a href="#products">제품</a></li>
+                <li><a href="#story">스토리</a></li>
+                <li><a href="#contact">문의</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>자연의 보석,<br><span>루비 키위</span></h1>
+            <p>달콤한 베리 향과 루비처럼 붉은 심장을 가진 특별한 키위. <br>일반 키위보다 높은 당도와 풍부한 항산화 성분을 경험해보세요.</p>
+            <a href="#products" class="btn">지금 구매하기</a>
+        </div>
+        <div class="hero-image">
+            <img src="assets/hero.png" alt="루비 키위 단면 이미지">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="products">
+        <div class="section-title">
+            <h2>왜 루비 키위인가요?</h2>
+            <p>루비 키위만이 가진 세 가지 특별함을 확인해보세요.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-candy-cane"></i></div>
+                <h3>압도적인 달콤함</h3>
+                <p>일반 골드 키위보다 높은 브릭스(Brix) 수치로, 마치 캔디처럼 달콤한 맛을 자랑합니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-heartbeat"></i></div>
+                <h3>붉은 에너지, 안토시아닌</h3>
+                <p>과육 중심의 붉은 빛은 강력한 항산화 성분인 안토시아닌이 풍부하다는 증거입니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+                <h3>천연 비타민 C 폭탄</h3>
+                <p>하루 단 한 알로 성인 하루 비타민 C 권장량을 충족할 수 있는 영양 만점 과일입니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story" id="story">
+        <div class="story-content">
+            <h2>Our Story</h2>
+            <p>우리는 가장 완벽한 루비 키위를 생산하기 위해 최적의 일조량과 토양을 가진 농장만을 선별합니다. 수확부터 배송까지, 자연의 신선함을 그대로 담아 당신의 식탁으로 보냅니다.</p>
+            <p style="margin-top: 1rem;">루비 키위는 단순한 과일이 아닙니다. 건강한 라이프스타일을 추구하는 당신을 위한 작은 사치이자 선물입니다.</p>
+        </div>
+        <div class="story-image">
+            <img src="assets/hero.png" alt="루비 키위 농장 이미지" style="filter: brightness(0.8);">
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-title">
+            <h2>문의하기</h2>
+            <p>단체 주문 및 제휴 문의는 아래 양식을 통해 남겨주세요.</p>
+        </div>
+        <div class="contact-container">
+            <form>
+                <div class="form-group">
+                    <label for="name">성함</label>
+                    <input type="text" id="name" placeholder="이름을 입력하세요">
+                </div>
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" placeholder="example@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">문의 내용</label>
+                    <textarea id="message" rows="5" placeholder="궁금하신 내용을 입력해주세요"></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">메시지 보내기</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">Ruby<span>Kiwi</span></div>
+        <div class="footer-links">
+            <a href="#">인스타그램</a>
+            <a href="#">페이스북</a>
+            <a href="#">블로그</a>
+        </div>
+        <p class="copyright">&copy; 2026 Ruby Kiwi Co. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
